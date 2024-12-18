@@ -96,7 +96,7 @@ tab1, tab2 = st.tabs(["Offense", "Defense"])
 
 with tab1:
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.scatter(filtered_offense['passing_yds'], filtered_offense['rushing_yds_gained'], color='blue', alpha=0.5)
+    ax.scatter(filtered_offense['passing_yds'], filtered_offense['rushing_yds_gained'], color='darkblue', alpha=0.8)
     ax.set_title("Passing Yards vs Rushing Yards Gained (Offense)")
     ax.set_xlabel("Passing Yards")
     ax.set_ylabel("Rushing Yards Gained")
@@ -105,7 +105,7 @@ with tab1:
 
 with tab2:
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.scatter(filtered_defense['passing_yds'], filtered_defense['rushing_yds_gained'], color='red', alpha=0.5)
+    ax.scatter(filtered_defense['passing_yds'], filtered_defense['rushing_yds_gained'], color='hotpink', alpha=0.8)
     ax.set_title("Passing Yards vs Rushing Yards Gained (Defense)")
     ax.set_xlabel("Passing Yards")
     ax.set_ylabel("Rushing Yards Gained")
