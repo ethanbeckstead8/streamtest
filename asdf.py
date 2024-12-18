@@ -96,8 +96,8 @@ tab1, tab2 = st.tabs(["Offense", "Defense"])
 
 with tab1:
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.stripplot(data=filtered_offense, x='team', y='rushing_yards', color='blue', jitter=True, ax=ax, label="Rushing Yards")
-    sns.stripplot(data=filtered_offense, x='team', y='passing_yards', color='orange', jitter=True, ax=ax, label="Passing Yards")
+    sns.stripplot(data=filtered_offense, x='team', y='rushing_yds_gained', color='blue', jitter=True, ax=ax, label="Rushing Yards")
+    sns.stripplot(data=filtered_offense, x='team', y='passing_yds', color='orange', jitter=True, ax=ax, label="Passing Yards")
     ax.set_title("Rushing vs Passing Yards Dot Plot (Offense)")
     ax.set_xlabel("Team")
     ax.set_ylabel("Yards")
@@ -107,8 +107,8 @@ with tab1:
 
 with tab2:
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.stripplot(data=filtered_defense, x='team', y='rushing_yards', color='blue', jitter=True, ax=ax, label="Rushing Yards")
-    sns.stripplot(data=filtered_defense, x='team', y='passing_yards', color='orange', jitter=True, ax=ax, label="Passing Yards")
+    sns.stripplot(data=filtered_defense, x='team', y='rushing_yds_gained', color='blue', jitter=True, ax=ax, label="Rushing Yards")
+    sns.stripplot(data=filtered_defense, x='team', y='passing_yds', color='orange', jitter=True, ax=ax, label="Passing Yards")
     ax.set_title("Rushing vs Passing Yards Dot Plot (Defense)")
     ax.set_xlabel("Team")
     ax.set_ylabel("Yards")
