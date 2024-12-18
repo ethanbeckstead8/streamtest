@@ -32,22 +32,26 @@ win_loss = st.sidebar.selectbox("Game Outcome", ["All", "W", "L"])
 
 home_or_away = st.sidebar.radio("Home or Away", ["All", "home", "away"])
 
-year = st.sidebar.selectbox("Year", ["All"] + sorted(offense['year'].unique().tolist()))
-
+year_range = st.sidebar.slider(
+    "Year Range",
+    min_value=int(offense['year'].min()),
+    max_value=int(offense['year'].max()),
+    value=(int(offense['year'].min()), int(offense['year'].max())),
+)
 
 
 filtered_offense = offense[
     ((offense['team'] == team) | (team == "All")) &
     ((offense['win_loss'] == win_loss) | (win_loss == "All")) &
     ((offense['home_or_away'] == home_or_away) | (home_or_away == "All")) &
-    ((offense['year'] == year) | (year == "All"))
+    (offense['year'].between(year_range[0], year_range[1]))
 ]
 
 filtered_defense = defense[
     ((defense['team'] == team) | (team == "All")) &
     ((defense['win_loss'] == win_loss) | (win_loss == "All")) &
     ((defense['home_or_away'] == home_or_away) | (home_or_away == "All")) &
-    ((defense['year'] == year) | (year == "All"))
+    (defense['year'].between(year_range[0], year_range[1]))
 ]
 
 
