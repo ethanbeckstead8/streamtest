@@ -40,8 +40,6 @@ filtered_offense = offense[
     ((offense['team'] == team) | (team == "All")) &
     ((offense['win_loss'] == win_loss) | (win_loss == "All")) &
     ((offense['home_or_away'] == home_or_away) | (home_or_away == "All")) &
-    (offense['pts_scored'].between(pts_scored[0], pts_scored[1])) &
-    (offense['pts_allowed'].between(pts_allowed[0], pts_allowed[1])) &
     ((offense['year'] == year) | (year == "All"))
 ]
 
@@ -49,8 +47,6 @@ filtered_defense = defense[
     ((defense['team'] == team) | (team == "All")) &
     ((defense['win_loss'] == win_loss) | (win_loss == "All")) &
     ((defense['home_or_away'] == home_or_away) | (home_or_away == "All")) &
-    (defense['pts_scored'].between(pts_scored[0], pts_scored[1])) &
-    (defense['pts_allowed'].between(pts_allowed[0], pts_allowed[1])) &
     ((defense['year'] == year) | (year == "All"))
 ]
 
