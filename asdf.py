@@ -10,6 +10,8 @@ defM = pd.read_csv('nfl_package/datasets/min_opp_game_stats_cleaned.csv')
 
 offK['team'] = 'Kansas City'
 offM['team'] = 'Minnesota'
+defM['team'] = 'Minnesota'
+defK['team'] = 'Kansas City'
 
 offense = pd.concat([offK, offM], ignore_index=True)
 offense.reset_index(drop=True, inplace=True)
