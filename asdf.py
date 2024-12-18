@@ -58,7 +58,7 @@ filtered_defense = defense[
 ]
 
 
-ot_games = filtered_offense[filtered_offense['win_loss'] == 'OT']
+ot_games = filtered_offense[filtered_offense['OT'] == 'OT']
 ot_percentage = (len(ot_games) / len(filtered_offense)) * 100
 
 st.subheader("Overtime Percentage (OT%)")
