@@ -16,7 +16,7 @@ defense = pd.concat([defK, defM], ignore_index=True)
 defense.reset_index(drop=True, inplace=True)
 st.sidebar.header("Filter Data Here")
 tab1, tab2 = st.tabs(["Offense", "Defense"])
-with tab 1:
+with tab1:
   st.write(offense)
-with tab 2:
+with tab2:
   st.write(defense)
