@@ -27,10 +27,10 @@ st.sidebar.header("Filter Data Here")
 
 team = st.sidebar.selectbox("Team", ["All", "Kansas City", "Minnesota"])
 
-win_loss = st.sidebar.selectbox("Game Outcome", ["All", "Win", "Loss"])
+win_loss = st.sidebar.selectbox("Game Outcome", ["All", "W", "L"])
 
 
-home_or_away = st.sidebar.radio("Home or Away", ["All", "Home", "Away"])
+home_or_away = st.sidebar.radio("Home or Away", ["All", "home", "away"])
 
 year = st.sidebar.selectbox("Year", ["All"] + sorted(offense['year'].unique().tolist()))
 
