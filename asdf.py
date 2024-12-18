@@ -70,8 +70,8 @@ fourth_down_pct = (filtered_offense['4dconv'].sum() / filtered_offense['4datt'].
 points_for = filtered_offense['pts_scored'].mean()
 points_against = filtered_offense['pts_allowed'].mean()
 passer_rating = filtered_offense['passer_rating'].mean()
-ry_a = (filtered_offense['rushing_yards'].sum() / filtered_offense['rushing_attempts'].sum()) if filtered_offense['rushing_attempts'].sum() != 0 else 0
-py_a = (filtered_offense['passing_yards'].sum() / filtered_offense['passing_attempts'].sum()) if filtered_offense['passing_attempts'].sum() != 0 else 0
+ry_a = (filtered_offense['rushing_yds/attempt'].mean
+py_a = (filtered_offense['yds/pass_attempt'].mean()
 
 st.subheader("Filtered Statistics")
 st.write(f"Overtime Percentage: {ot_percentage:.2f}%")
