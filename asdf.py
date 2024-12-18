@@ -73,6 +73,7 @@ passer_rating = filtered_offense['passer_rating'].mean()
 ry_a = filtered_offense['rushing_yds/attempt'].mean()
 py_a = filtered_offense['yds/pass_attempt'].mean()
 
+
 st.subheader("Filtered Statistics")
 st.write(f"Overtime Percentage: {ot_percentage:.2f}%")
 st.write(f"Average Punts: {avg_punts:.2f}")
