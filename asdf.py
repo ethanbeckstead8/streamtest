@@ -23,11 +23,6 @@ offense = offense[['team'] + [col for col in offense.columns if col != 'team']]
 defense = defense[['team'] + [col for col in offense.columns if col != 'team']]
 
 
-ot_games = filtered_offense[filtered_offense['win_loss'] == 'OT']
-ot_percentage = (len(ot_games) / len(filtered_offense)) * 100
-
-st.subheader("Overtime Percentage (OT%)")
-st.write(f"Overtime Percentage: {ot_percentage:.2f}%")
 
 
 
@@ -64,6 +59,13 @@ filtered_defense = defense[
 
 
 tab1, tab2 = st.tabs(["Offense", "Defense"])
+
+ot_games = filtered_offense[filtered_offense['win_loss'] == 'OT']
+ot_percentage = (len(ot_games) / len(filtered_offense)) * 100
+
+st.subheader("Overtime Percentage (OT%)")
+st.write(f"Overtime Percentage: {ot_percentage:.2f}%")
+
 
 with tab1:
     st.write(filtered_offense)
