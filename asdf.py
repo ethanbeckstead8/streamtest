@@ -69,8 +69,8 @@ avg_fgm = filtered_offense['fgm'].mean()
 fg_percentage = (filtered_offense['fgm'].sum() / filtered_offense['fga'].sum()) * 100 if filtered_offense['fga'].sum() != 0 else 0
 third_down_pct = (filtered_offense['3dconv'].sum() / filtered_offense['3dattempt'].sum()) * 100 if filtered_offense['3dattempt'].sum() != 0 else 0
 fourth_down_pct = (filtered_offense['4dconv'].sum() / filtered_offense['4datt'].sum()) * 100 if filtered_offense['4datt'].sum() != 0 else 0
-points_for = filtered_offense['pts_scored'].mean()
-points_against = filtered_offense['pts_allowed'].mean()
+points_for = filtered_offense['pts_scored'].sum()
+points_against = filtered_offense['pts_allowed'].sum()
 passer_rating = filtered_offense['passer_rating'].mean()
 ry_a = filtered_offense['rushing_yds/attempt'].mean()
 py_a = filtered_offense['yds/pass_attempt'].mean()
