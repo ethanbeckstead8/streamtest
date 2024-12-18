@@ -61,14 +61,14 @@ filtered_defense = defense[
 ot_games = filtered_offense[filtered_offense['OT'] == 'OT']
 ot_percentage = (len(ot_games) / len(filtered_offense)) * 100
 avg_punts = filtered_offense['times_punted'].mean()
-avg_rush_tds = filtered_offense['rush_tds'].mean()
-avg_pass_tds = filtered_offense['pass_tds'].mean()
+avg_rush_tds = filtered_offense['rushing_tds'].mean()
+avg_pass_tds = filtered_offense['passing_tds'].mean()
 avg_fgm = filtered_offense['fgm'].mean()
 fg_percentage = (filtered_offense['fgm'].sum() / filtered_offense['fga'].sum()) * 100 if filtered_offense['fga'].sum() != 0 else 0
-third_down_pct = (filtered_offense['3d_completions'].sum() / filtered_offense['3d_attempts'].sum()) * 100 if filtered_offense['3d_attempts'].sum() != 0 else 0
-fourth_down_pct = (filtered_offense['4d_completions'].sum() / filtered_offense['4d_attempts'].sum()) * 100 if filtered_offense['4d_attempts'].sum() != 0 else 0
-points_for = filtered_offense['points_for'].sum()
-points_against = filtered_offense['points_against'].sum()
+third_down_pct = (filtered_offense['3dconv'].sum() / filtered_offense['3dattempt'].sum()) * 100 if filtered_offense['3dattempt'].sum() != 0 else 0
+fourth_down_pct = (filtered_offense['4dconv'].sum() / filtered_offense['4datt'].sum()) * 100 if filtered_offense['4datt'].sum() != 0 else 0
+points_for = filtered_offense['pts_scored'].mean()
+points_against = filtered_offense['pts_allowed'].mean()
 passer_rating = filtered_offense['passer_rating'].mean()
 ry_a = (filtered_offense['rushing_yards'].sum() / filtered_offense['rushing_attempts'].sum()) if filtered_offense['rushing_attempts'].sum() != 0 else 0
 py_a = (filtered_offense['passing_yards'].sum() / filtered_offense['passing_attempts'].sum()) if filtered_offense['passing_attempts'].sum() != 0 else 0
@@ -85,8 +85,8 @@ st.write(f"4th Down Completion Percentage: {fourth_down_pct:.2f}%")
 st.write(f"Points For: {points_for}")
 st.write(f"Points Against: {points_against}")
 st.write(f"Passer Rating: {passer_rating:.2f}")
-st.write(f"Rushing Yards per Attempt (RY/A): {ry_a:.2f}")
-st.write(f"Passing Yards per Attempt (PY/A): {py_a:.2f}")
+st.write(f"Rushing Yards per Attempt: {ry_a:.2f}")
+st.write(f"Passing Yards per Attempt: {py_a:.2f}")
 tab1, tab2 = st.tabs(["Offense", "Defense"])
 
 
