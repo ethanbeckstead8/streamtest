@@ -19,6 +19,10 @@ offense.reset_index(drop=True, inplace=True)
 defense = pd.concat([defK, defM], ignore_index=True)
 defense.reset_index(drop=True, inplace=True)
 
+offense = offense[['team'] + [col for col in offense.columns if col != 'team']]
+defense = defense[['team'] + [col for col in offense.columns if col != 'team']]
+
+
 st.sidebar.header("Filter Data Here")
 
 team = st.sidebar.selectbox("Select Team", ["All", "Kansas City", "Minnesota"])
