@@ -25,22 +25,23 @@ defense = defense[['team'] + [col for col in offense.columns if col != 'team']]
 
 st.sidebar.header("Filter Data Here")
 
-team = st.sidebar.selectbox("Select Team", ["All", "Kansas City", "Minnesota"])
+team = st.sidebar.selectbox("Team", ["All", "Kansas City", "Minnesota"])
 
-win_loss = st.sidebar.selectbox("Select Win/Loss", ["All", "W", "L"])
+win_loss = st.sidebar.selectbox("Game Outcome", ["All", "Win", "Loss"])
 
-year = st.sidebar.slider("Select Year", int(offense['year'].min()), int(offense['year'].max()), (2019, 2023))
 
-if team != "All":
-    offense = offense[offense['team'] == team]
-    defense = defense[defense['team'] == team]
+home_or_away = st.sidebar.radio("Home or Away", ["All", "Home", "Away"])
 
-if win_loss != "All":
-    offense = offense[offense['win_loss'] == win_loss]
-    defense = defense[defense['win_loss'] == win_loss]
+year = st.sidebar.selectbox("Year", ["All"] + sorted(offense['year'].unique().tolist()))
 
-offense = offense[(offense['year'] >= year[0]) & (offense['year'] <= year[1])]
-defense = defense[(defense['year'] >= year[0]) & (defense['year'] <= year[1])]
+
+
+data = offense[
+    ((offense['team'] == team) | (team == "All")) &
+    ((offense['win_loss'] == win_loss) | (win_loss == "All")) &
+    ((offense['home_or_away'] == home_or_away) | (home_or_away == "All")) &
+    ((offense['year'] == year) | (year == "All"))
+]
 
 
 tab1, tab2 = st.tabs(["Offense", "Defense"])
