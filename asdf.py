@@ -60,7 +60,7 @@ filtered_defense = defense[
 
 ot_games = filtered_offense[filtered_offense['OT'] == 'OT']
 ot_percentage = (len(ot_games) / len(filtered_offense)) * 100
-avg_punts = filtered_offense['punts'].mean()
+avg_punts = filtered_offense['times_punted'].mean()
 avg_rush_tds = filtered_offense['rush_tds'].mean()
 avg_pass_tds = filtered_offense['pass_tds'].mean()
 avg_fgm = filtered_offense['fgm'].mean()
